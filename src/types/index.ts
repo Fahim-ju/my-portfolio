@@ -39,3 +39,23 @@ export interface Certification {
   badgeUrl?: string;
   level?: string;
 }
+
+export interface Contest {
+  id: number;
+  name: string;
+  organizer: string;
+  year: string;
+  result: string;
+  category: 'Competitive Programming' | 'Hackathon' | 'CTF' | 'Data Science' | 'Other';
+  description?: string;
+  url?: string;
+}
+
+export interface NotableWork {
+  id: number;
+  title: string;
+  tech: string[];
+  description: string;
+  category: string;
+  url?: string;
+}

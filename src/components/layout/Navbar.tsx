@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: 'Experience', href: '#experience' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
+  { label: 'Blog', href: 'https://medium.com/@f.nahian1997', external: true },
 ];
 
 export function Navbar() {
@@ -24,7 +25,7 @@ export function Navbar() {
 
   // Highlight active section with IntersectionObserver
   useEffect(() => {
-    const sectionIds = NAV_LINKS.map((l) => l.href.slice(1));
+    const sectionIds = NAV_LINKS.filter((l) => !l.external).map((l) => l.href.slice(1));
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -62,14 +63,15 @@ export function Navbar() {
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(({ label, href }) => {
+          {NAV_LINKS.map(({ label, href, external }) => {
             const id = href.slice(1);
             return (
               <li key={href}>
                 <a
                   href={href}
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className={`text-sm font-medium transition-colors duration-200 ${
-                    activeSection === id
+                    !external && activeSection === id
                       ? 'text-sky-400'
                       : 'text-slate-400 hover:text-slate-100'
                   }`}
@@ -103,15 +105,16 @@ export function Navbar() {
             className="md:hidden overflow-hidden bg-slate-900/98 border-t border-slate-800"
           >
             <ul className="flex flex-col px-6 py-4 gap-4">
-              {NAV_LINKS.map(({ label, href }) => {
+              {NAV_LINKS.map(({ label, href, external }) => {
                 const id = href.slice(1);
                 return (
                   <li key={href}>
                     <a
                       href={href}
                       onClick={handleNavClick}
+                      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       className={`block text-sm font-medium py-1 transition-colors duration-200 ${
-                        activeSection === id
+                        !external && activeSection === id
                           ? 'text-sky-400'
                           : 'text-slate-300 hover:text-sky-400'
                       }`}
