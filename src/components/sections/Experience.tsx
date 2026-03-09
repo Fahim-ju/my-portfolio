@@ -43,12 +43,12 @@ export function Experience() {
                   }`}
                 >
                   <div className="bg-slate-800 border border-slate-700 rounded-xl p-5 hover:border-sky-500/40 transition-colors">
-                    <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                      <div>
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div className="min-w-0">
                         <h3 className="text-slate-100 font-bold text-base">{item.role}</h3>
                         <p className="text-sky-400 text-sm font-medium">{item.company}</p>
                       </div>
-                      <span className="text-xs text-slate-500 bg-slate-700/60 px-2.5 py-1 rounded-full whitespace-nowrap">
+                      <span className="shrink-0 text-xs text-slate-500 bg-slate-700/60 px-2.5 py-1 rounded-full whitespace-nowrap">
                         {item.period}
                       </span>
                     </div>
