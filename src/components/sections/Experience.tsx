@@ -10,7 +10,7 @@ export function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="py-24 px-4 bg-slate-800/30"
+      className="py-24 px-4 bg-zinc-900/30"
     >
       <div className="max-w-3xl mx-auto">
         <SectionTitle
@@ -20,7 +20,7 @@ export function Experience() {
 
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-700 -translate-x-px" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-zinc-800 -translate-x-px" />
 
           <div className="space-y-12">
             {experience.map((item, idx) => (
@@ -34,7 +34,7 @@ export function Experience() {
                 } items-start md:items-center gap-6 pl-12 md:pl-0`}
               >
                 {/* Dot */}
-                <div className="absolute left-4 md:left-1/2 top-5 md:top-1/2 w-3 h-3 rounded-full bg-sky-500 border-2 border-slate-900 -translate-x-1/2 md:-translate-y-1/2 z-10" />
+                <div className="absolute left-4 md:left-1/2 top-5 md:top-1/2 w-3 h-3 rounded-full bg-indigo-500 border-2 border-[#09090b] -translate-x-1/2 md:-translate-y-1/2 z-10 shadow-lg shadow-indigo-500/50" />
 
                 {/* Card */}
                 <div
@@ -42,20 +42,20 @@ export function Experience() {
                     idx % 2 === 0 ? 'md:mr-8' : 'md:ml-8'
                   }`}
                 >
-                  <div className="bg-slate-800 border border-slate-700 rounded-xl p-5 hover:border-sky-500/40 transition-colors">
+                  <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300">
                     <div className="flex items-start justify-between gap-3 mb-3">
                       <div className="min-w-0">
-                        <h3 className="text-slate-100 font-bold text-base">{item.role}</h3>
-                        <p className="text-sky-400 text-sm font-medium">{item.company}</p>
+                        <h3 className="text-zinc-100 font-bold text-base">{item.role}</h3>
+                        <p className="text-indigo-400 text-sm font-medium">{item.company}</p>
                       </div>
-                      <span className="shrink-0 text-xs text-slate-500 bg-slate-700/60 px-2.5 py-1 rounded-full whitespace-nowrap">
+                      <span className="shrink-0 text-xs text-zinc-500 bg-zinc-800/80 px-2.5 py-1 rounded-full whitespace-nowrap border border-zinc-700">
                         {item.period}
                       </span>
                     </div>
                     <ul className="space-y-1.5">
                       {item.description.map((point, i) => (
-                        <li key={i} className="text-slate-400 text-sm flex gap-2 leading-relaxed">
-                          <span className="text-sky-500 mt-1 flex-shrink-0">▸</span>
+                        <li key={i} className="text-zinc-400 text-sm flex gap-2 leading-relaxed">
+                          <span className="text-indigo-500 mt-1 shrink-0">▸</span>
                           {point}
                         </li>
                       ))}

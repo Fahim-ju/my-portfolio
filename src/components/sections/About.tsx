@@ -18,16 +18,16 @@ export function About() {
         {/* Profile image */}
         <div className="flex justify-center md:justify-end">
           <div className="relative w-56 h-56 md:w-72 md:h-72">
-            <div className="absolute inset-0 rounded-2xl bg-sky-500/20 blur-xl" />
-            <div className="relative w-full h-full rounded-2xl border-2 border-sky-500/30 overflow-hidden">
+            <div className="absolute inset-0 rounded-2xl bg-indigo-600/20 blur-xl" />
+            <div className="relative w-full h-full rounded-2xl border-2 border-indigo-500/30 overflow-hidden">
               <img src="/myImage.png" alt="Fahim" className="w-full h-full object-cover object-top" />
             </div>
           </div>
         </div>
 
         {/* Bio */}
-        <div className="space-y-5 text-slate-400 leading-relaxed">
-          <p className="text-lg text-slate-300 font-medium">
+        <div className="space-y-5 text-zinc-400 leading-relaxed">
+          <p className="text-lg text-zinc-200 font-medium">
             I'm a Full-Stack Developer with a passion for building scalable, high-performance web and cloud
             applications that solve complex business problems.
           </p>
@@ -46,9 +46,9 @@ export function About() {
               { label: "Focus", value: "Full-Stack + Cloud" },
               { label: "Available", value: "Open to Work" },
             ].map(({ label, value }) => (
-              <div key={label} className="bg-slate-800/60 rounded-lg p-3 border border-slate-700">
-                <p className="text-xs text-sky-400 font-semibold uppercase tracking-wider mb-0.5">{label}</p>
-                <p className="text-sm text-slate-200 font-medium">{value}</p>
+              <div key={label} className="bg-zinc-900/70 rounded-lg p-3 border border-zinc-800 hover:border-indigo-500/40 transition-colors">
+                <p className="text-xs text-indigo-400 font-semibold uppercase tracking-wider mb-0.5">{label}</p>
+                <p className="text-sm text-zinc-200 font-medium">{value}</p>
               </div>
             ))}
           </div>

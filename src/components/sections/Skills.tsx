@@ -20,7 +20,7 @@ const CONTEST_CATEGORY_COLORS: Record<string, string> = {
   Hackathon: 'bg-orange-500/15 text-orange-400 border-orange-500/30',
   CTF: 'bg-red-500/15 text-red-400 border-red-500/30',
   'Data Science': 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
-  Other: 'bg-slate-500/15 text-slate-400 border-slate-500/30',
+  Other: 'bg-zinc-500/15 text-zinc-400 border-zinc-500/30',
 };
 
 const TABS = [
@@ -39,7 +39,7 @@ export function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="py-24 px-4 bg-slate-800/30"
+      className="py-24 px-4 bg-zinc-900/30"
     >
       <div className="max-w-6xl mx-auto">
         <SectionTitle
@@ -49,15 +49,15 @@ export function Skills() {
 
         {/* Tab Bar */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex bg-slate-800 border border-slate-700 rounded-xl p-1 gap-1">
+          <div className="inline-flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 gap-1">
             {TABS.map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
                 onClick={() => setActiveTab(id)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeTab === id
-                    ? 'bg-sky-500 text-white shadow-md shadow-sky-500/30'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700'
+                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/30'
+                    : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -84,9 +84,9 @@ export function Skills() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: catIdx * 0.1 }}
-                  className="bg-slate-800 rounded-xl p-5 border border-slate-700"
+                  className="bg-zinc-900 rounded-xl p-5 border border-zinc-800 hover:border-indigo-500/30 transition-colors duration-300"
                 >
-                  <h3 className="flex items-center gap-2 text-slate-200 font-semibold mb-4">
+                  <h3 className="flex items-center gap-2 text-zinc-200 font-semibold mb-4">
                     <span>{CATEGORY_ICONS[cat.category]}</span>
                     {cat.category}
                   </h3>
@@ -113,7 +113,7 @@ export function Skills() {
               {contests.map((contest) => (
                 <div
                   key={contest.id}
-                  className="bg-slate-800 border border-slate-700 rounded-xl p-5 flex flex-col gap-3 hover:border-sky-500/40 hover:shadow-lg hover:shadow-sky-500/5 transition-all duration-300"
+                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col gap-3 hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <span
@@ -123,22 +123,22 @@ export function Skills() {
                     >
                       {contest.category}
                     </span>
-                    <span className="text-xs text-slate-500 font-mono shrink-0">{contest.year}</span>
+                    <span className="text-xs text-zinc-500 font-mono shrink-0">{contest.year}</span>
                   </div>
 
                   <div>
-                    <h3 className="text-slate-100 font-bold text-base leading-snug mb-0.5">
+                    <h3 className="text-zinc-100 font-bold text-base leading-snug mb-0.5">
                       {contest.name}
                     </h3>
-                    <p className="text-sky-400 text-sm font-medium">{contest.organizer}</p>
+                    <p className="text-indigo-400 text-sm font-medium">{contest.organizer}</p>
                   </div>
 
                   {contest.description && (
-                    <p className="text-slate-400 text-sm leading-relaxed">{contest.description}</p>
+                    <p className="text-zinc-400 text-sm leading-relaxed">{contest.description}</p>
                   )}
 
                   <div className="mt-auto flex items-center justify-between gap-2">
-                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700 text-slate-300 border border-slate-600">
+                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700">
                       {contest.result}
                     </span>
                     {contest.url && (
@@ -146,7 +146,7 @@ export function Skills() {
                         href={contest.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-sky-400 hover:text-sky-300 underline-offset-2 transition-colors"
+                        className="text-xs text-indigo-400 hover:text-indigo-300 underline-offset-2 transition-colors"
                       >
                         View →
                       </a>
@@ -170,24 +170,24 @@ export function Skills() {
               {notableWork.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-slate-800 border border-slate-700 rounded-xl p-6 flex flex-col gap-4 hover:border-sky-500/40 hover:shadow-lg hover:shadow-sky-500/5 transition-all duration-300"
+                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col gap-4 hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-slate-100 font-bold text-base leading-snug">
+                    <h3 className="text-zinc-100 font-bold text-base leading-snug">
                       {item.title}
                     </h3>
-                    <span className="shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full bg-sky-500/15 text-sky-400 border border-sky-500/30">
+                    <span className="shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-500/15 text-indigo-400 border border-indigo-500/30">
                       {item.category}
                     </span>
                   </div>
 
-                  <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{item.description}</p>
 
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {item.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-xs px-2.5 py-1 rounded-full bg-slate-700 text-slate-300 border border-slate-600 font-mono"
+                        className="text-xs px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700 font-mono"
                       >
                         {t}
                       </span>
@@ -199,7 +199,7 @@ export function Skills() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 hover:border-sky-500/60 text-sky-400 hover:text-sky-300 text-sm font-semibold transition-all duration-200"
+                      className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 hover:border-indigo-500/60 text-indigo-400 hover:text-indigo-300 text-sm font-semibold transition-all duration-200"
                     >
                       <FiExternalLink className="w-4 h-4" />
                       Learn More

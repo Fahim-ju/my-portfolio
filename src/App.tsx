@@ -10,7 +10,7 @@ import { Contact } from './components/sections/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100">
+    <div className="min-h-screen bg-[#09090b] text-zinc-50">
       <Navbar />
       <main>
         <Hero />

@@ -97,7 +97,7 @@ export function Contact() {
           {/* Social links */}
           <div className="md:col-span-2 space-y-6">
             <div>
-              <h3 className="text-slate-200 font-semibold text-lg mb-4">Connect with me</h3>
+              <h3 className="text-zinc-200 font-semibold text-lg mb-4">Connect with me</h3>
               <div className="space-y-4">
                 {SOCIALS.map(({ Icon, label, href, handle }) => (
                   <a
@@ -105,13 +105,13 @@ export function Contact() {
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-slate-800 border border-slate-700 hover:border-sky-500/50 hover:text-sky-400 transition-colors group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-indigo-500/50 hover:text-indigo-400 transition-colors group"
                     aria-label={label}
                   >
-                    <Icon className="w-5 h-5 text-sky-400 flex-shrink-0" />
+                    <Icon className="w-5 h-5 text-indigo-400 shrink-0" />
                     <div>
-                      <p className="text-slate-200 text-sm font-medium group-hover:text-sky-300 transition-colors">{label}</p>
-                      <p className="text-slate-500 text-xs">{handle}</p>
+                      <p className="text-zinc-200 text-sm font-medium group-hover:text-indigo-300 transition-colors">{label}</p>
+                      <p className="text-zinc-600 text-xs">{handle}</p>
                     </div>
                   </a>
                 ))}
@@ -123,11 +123,11 @@ export function Contact() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="md:col-span-3 bg-slate-800 border border-slate-700 rounded-xl p-6 space-y-5"
+            className="md:col-span-3 bg-zinc-900 border border-zinc-800 rounded-xl p-6 space-y-5"
           >
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="name" className="block text-slate-300 text-sm font-medium mb-1.5">
+                <label htmlFor="name" className="block text-zinc-300 text-sm font-medium mb-1.5">
                   Name
                 </label>
                 <input
@@ -136,14 +136,14 @@ export function Contact() {
                   type="text"
                   autoComplete="name"
                   placeholder="John Doe"
-                  className={`w-full bg-slate-700/50 border rounded-lg px-4 py-2.5 text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition ${
-                    errors.name ? 'border-red-500' : 'border-slate-600'
+                  className={`w-full bg-zinc-800/60 border rounded-lg px-4 py-2.5 text-zinc-200 placeholder-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ${
+                    errors.name ? 'border-red-500' : 'border-zinc-700'
                   }`}
                 />
                 {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
               </div>
               <div>
-                <label htmlFor="email" className="block text-slate-300 text-sm font-medium mb-1.5">
+                <label htmlFor="email" className="block text-zinc-300 text-sm font-medium mb-1.5">
                   Email
                 </label>
                 <input
@@ -152,8 +152,8 @@ export function Contact() {
                   type="email"
                   autoComplete="email"
                   placeholder="john@example.com"
-                  className={`w-full bg-slate-700/50 border rounded-lg px-4 py-2.5 text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition ${
-                    errors.email ? 'border-red-500' : 'border-slate-600'
+                  className={`w-full bg-zinc-800/60 border rounded-lg px-4 py-2.5 text-zinc-200 placeholder-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ${
+                    errors.email ? 'border-red-500' : 'border-zinc-700'
                   }`}
                 />
                 {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
@@ -161,7 +161,7 @@ export function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-slate-300 text-sm font-medium mb-1.5">
+              <label htmlFor="message" className="block text-zinc-300 text-sm font-medium mb-1.5">
                 Message
               </label>
               <textarea
@@ -169,8 +169,8 @@ export function Contact() {
                 name="message"
                 rows={5}
                 placeholder="Tell me about your project or just say hello..."
-                className={`w-full bg-slate-700/50 border rounded-lg px-4 py-2.5 text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition resize-none ${
-                  errors.message ? 'border-red-500' : 'border-slate-600'
+                className={`w-full bg-zinc-800/60 border rounded-lg px-4 py-2.5 text-zinc-200 placeholder-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none ${
+                  errors.message ? 'border-red-500' : 'border-zinc-700'
                 }`}
               />
               {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}

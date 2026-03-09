@@ -9,12 +9,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({ variant = 'primary', children, href, className = '', ...props }: ButtonProps) {
   const base =
-    'inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400';
+    'inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400';
   const styles = {
     primary:
-      'bg-sky-500 text-white hover:bg-sky-400 active:scale-95 shadow-lg shadow-sky-500/20',
+      'bg-indigo-600 text-white hover:bg-indigo-500 active:scale-95 shadow-lg shadow-indigo-500/25',
     ghost:
-      'border border-slate-600 text-slate-300 hover:border-sky-500 hover:text-sky-400 active:scale-95',
+      'border border-zinc-700 text-zinc-300 hover:border-indigo-500 hover:text-indigo-400 active:scale-95 bg-zinc-900/60',
   };
 
   const combined = `${base} ${styles[variant]} ${className}`;
