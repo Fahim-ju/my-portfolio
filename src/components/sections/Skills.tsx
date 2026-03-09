@@ -10,7 +10,7 @@ import { notableWork } from '../../data/notableWork';
 
 const CATEGORY_ICONS: Record<string, string> = {
   Frontend: '🖥️',
-  Backend: '⚙️',
+  "Backend & APIs": '⚙️',
   'Cloud & DevOps': '☁️',
   'Databases & Tools': '🛢️',
 };

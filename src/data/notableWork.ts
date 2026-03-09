@@ -2,19 +2,19 @@ import type { NotableWork } from "../types";
 
 export const notableWork: NotableWork[] = [
   {
-    id: 1,
-    title: "Secure Multi-User SFTP Server on AWS",
-    tech: ["AWS EC2", "Linux", "OpenSSH", "S3", "CloudWatch", "IAM"],
-    description:
-      "Designed and deployed a secure multi-user SFTP server on AWS EC2 with user isolation using chroot jail. Implemented automated file synchronization to Amazon S3, real-time file monitoring with inotify, and centralized logging using CloudWatch.",
-    category: "AWS",
-  },
-  {
     id: 2,
     title: "Serverless Email Processing Pipeline",
     tech: ["AWS Lambda", "AWS SES", "Amazon S3", "DynamoDB", "Python"],
     description:
       "Built a serverless pipeline to process incoming emails via AWS SES. The system automatically stores email content in S3, extracts structured information from the email body, processes attachments, and saves metadata into DynamoDB.",
+    category: "AWS",
+  },
+  {
+    id: 1,
+    title: "Secure Multi-User SFTP Server on AWS",
+    tech: ["AWS EC2", "Linux", "OpenSSH", "S3", "CloudWatch", "IAM"],
+    description:
+      "Designed and deployed a secure multi-user SFTP server on AWS EC2 with user isolation using chroot jail. Implemented automated file synchronization to Amazon S3, real-time file monitoring with inotify, and centralized logging using CloudWatch.",
     category: "AWS",
   },
   {
@@ -49,13 +49,5 @@ export const notableWork: NotableWork[] = [
       "Conducted research on automated wildlife identification using camera trap images. The system uses machine learning models to identify animal species and monitor biodiversity in forest environments.",
     category: "Research",
     url: "https://github.com/Fahim-ju/WILDLIFE-DIVERSITY.git",
-  },
-  {
-    id: 6,
-    title: "SharePoint File Integration Tool",
-    tech: [".NET", "Microsoft Graph API", "Azure AD"],
-    description:
-      "Developed a backend integration to securely access and retrieve files from SharePoint using Azure AD app registration and Microsoft Graph APIs.",
-    category: "Backend",
   },
 ];
