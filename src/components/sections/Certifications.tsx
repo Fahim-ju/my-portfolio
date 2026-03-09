@@ -59,7 +59,7 @@ export function Certifications() {
               </div>
 
               {/* Dates */}
-              <div className="flex flex-wrap gap-3 text-xs text-slate-400">
+              <div className="flex flex-col gap-2 text-xs text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <FiCalendar className="w-3.5 h-3.5 text-slate-500" />
                   Issued: <span className="text-slate-300 font-medium">{cert.issueDate}</span>
