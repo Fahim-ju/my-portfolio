@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiCode, FiAward, FiZap } from 'react-icons/fi';
+import { FiCode, FiAward, FiZap, FiExternalLink } from 'react-icons/fi';
 import { useSectionInView } from '../../hooks/useSectionInView';
 import { SectionTitle } from '../ui/SectionTitle';
 import { SkillBadge } from '../ui/SkillBadge';
@@ -25,8 +25,8 @@ const CONTEST_CATEGORY_COLORS: Record<string, string> = {
 
 const TABS = [
   { id: 'technologies', label: 'Technologies', icon: FiCode },
-  { id: 'competitions', label: 'Competitions', icon: FiAward },
   { id: 'notable', label: 'Notable Work', icon: FiZap },
+  { id: 'competitions', label: 'Competitions', icon: FiAward },
 ] as const;
 
 type TabId = (typeof TABS)[number]['id'];
@@ -146,7 +146,7 @@ export function Skills() {
                         href={contest.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-sky-400 hover:text-sky-300 underline underline-offset-2 transition-colors"
+                        className="text-xs text-sky-400 hover:text-sky-300 underline-offset-2 transition-colors"
                       >
                         View →
                       </a>
@@ -199,9 +199,10 @@ export function Skills() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-sky-400 hover:text-sky-300 underline underline-offset-2 transition-colors self-start"
+                      className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 hover:border-sky-500/60 text-sky-400 hover:text-sky-300 text-sm font-semibold transition-all duration-200"
                     >
-                      Learn more →
+                      <FiExternalLink className="w-4 h-4" />
+                      Learn More
                     </a>
                   )}
                 </div>
