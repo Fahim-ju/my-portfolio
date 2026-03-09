@@ -26,12 +26,12 @@ export function About() {
         <div className="flex justify-center md:justify-end">
           <div className="relative w-56 h-56 md:w-72 md:h-72">
             <div className="absolute inset-0 rounded-2xl bg-sky-500/20 blur-xl" />
-            <div className="relative w-full h-full rounded-2xl bg-slate-800 border-2 border-sky-500/30 flex items-center justify-center overflow-hidden">
-              {/* Placeholder avatar */}
-              <svg viewBox="0 0 100 100" className="w-3/4 h-3/4 text-slate-600" fill="currentColor">
-                <circle cx="50" cy="35" r="20" />
-                <ellipse cx="50" cy="85" rx="35" ry="25" />
-              </svg>
+            <div className="relative w-full h-full rounded-2xl border-2 border-sky-500/30 overflow-hidden">
+              <img
+                src="/myImage.png"
+                alt="Fahim"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </div>
         </div>
