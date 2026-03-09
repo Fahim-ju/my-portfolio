@@ -27,3 +27,15 @@ export interface ExperienceItem {
   location: string;
   description: string[];
 }
+
+export interface Certification {
+  id: number;
+  name: string;
+  issuer: string;
+  issueDate: string;
+  expiryDate?: string;
+  credentialId: string;
+  verifyUrl: string;
+  badgeUrl?: string;
+  level?: string;
+}
