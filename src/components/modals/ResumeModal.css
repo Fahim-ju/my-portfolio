@@ -1,0 +1,63 @@
+/* Resume Modal Toolbar Styling */
+.resume-modal-toolbar {
+  background-color: rgb(30, 41, 59);
+  border-bottom: 1px solid rgb(51, 65, 85);
+}
+
+/* Style toolbar buttons */
+.resume-modal-toolbar button {
+  color: rgb(148, 163, 184) !important;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.resume-modal-toolbar button:hover {
+  color: rgb(56, 189, 248) !important;
+  background-color: rgba(56, 189, 248, 0.1);
+}
+
+.resume-modal-toolbar button:active {
+  color: rgb(3, 152, 252) !important;
+  background-color: rgba(3, 152, 252, 0.2);
+}
+
+/* SVG icons inside buttons */
+.resume-modal-toolbar button svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+/* Current page label styling */
+.resume-modal-toolbar .current-page-label {
+  color: rgb(148, 163, 184);
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Page navigation buttons */
+.resume-modal-toolbar .page-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Zoom percentage display */
+.resume-modal-toolbar .zoom-percentage {
+  color: rgb(148, 163, 184);
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 45px;
+  text-align: center;
+}
+
+/* Separator styling */
+.resume-modal-toolbar .divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgb(71, 85, 105);
+}
