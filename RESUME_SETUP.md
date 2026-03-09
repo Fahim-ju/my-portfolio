@@ -17,19 +17,6 @@ my-portfolio/
 └── src/
 ```
 
-### Step 3: Update the Path (Optional)
-If you named your file differently, update the path in `src/components/modals/ResumeModal.tsx`:
-
-```tsx
-export function ResumeModal({
-  isOpen,
-  onClose,
-  resumeUrl = '/resume.pdf',  // ← Change this path if needed
-}: ResumeModalProps) {
-  // ...
-}
-```
-
 ## Features
 
 The "View Resume" button in the Hero section opens a professional PDF viewer with:
@@ -48,24 +35,6 @@ The "View Resume" button in the Hero section opens a professional PDF viewer wit
 3. Use the controls to zoom, navigate pages, or download
 4. Click the X button or click outside to close
 
-## Customization
-
-If you want to customize the PDF viewer:
-
-- **Styling**: Edit colors and spacing in `src/components/ui/PDFViewer.tsx`
-- **Default Zoom**: Change the initial zoom level (currently 1.5 = 150%)
-  ```tsx
-  const [scale, setScale] = useState(1.5);  // Change this value
-  ```
-- **File Name Display**: Update the filename shown in the viewer
-  ```tsx
-  <ResumeModal 
-    isOpen={isResumeOpen} 
-    onClose={() => setIsResumeOpen(false)}
-    resumeUrl="/my-custom-resume.pdf"  // Custom path
-  />
-  ```
-
 ## Testing
 
 To test the feature:
@@ -74,4 +43,3 @@ To test the feature:
 2. Click the "View Resume" button
 3. Test zoom controls, page navigation, and download functionality
 
-All done! Your portfolio now has a professional resume viewer.
