@@ -1,0 +1,86 @@
+/* GitHub Calendar Custom Styling */
+
+.react-calendar-graph {
+  background: transparent;
+}
+
+.react-calendar-graph .month-stack {
+  gap: 12px;
+}
+
+.react-calendar-graph g text {
+  fill: #cbd5e1 !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.react-calendar-graph .react-calendar-graph--small g text {
+  opacity: 0.7;
+}
+
+/* Contribution cells */
+.react-calendar-graph g rect {
+  rx: 2;
+  ry: 2;
+}
+
+.react-calendar-graph g rect:hover {
+  filter: brightness(1.2);
+  stroke: #38bdf8;
+  stroke-width: 1.5;
+}
+
+/* Activity level colors - Dark theme optimized */
+.react-calendar-graph .level-0 {
+  fill: #1e293b;
+}
+
+.react-calendar-graph .level-1 {
+  fill: #0ea5e9;
+}
+
+.react-calendar-graph .level-2 {
+  fill: #06b6d4;
+}
+
+.react-calendar-graph .level-3 {
+  fill: #0891b2;
+}
+
+.react-calendar-graph .level-4 {
+  fill: #0369a1;
+}
+
+/* Legend styling */
+.react-calendar-graph .legend {
+  margin-top: 20px;
+}
+
+.react-calendar-graph .legend text {
+  fill: #94a3b8 !important;
+  font-size: 11px;
+}
+
+.react-calendar-graph-axis {
+  font-size: 12px;
+  fill: #94a3b8;
+}
+
+/* Tooltip styling from react-tooltip */
+#github-tooltip {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+#github-tooltip::after {
+  border-top-color: #1e293b !important;
+}
+
+.react-tooltip-content {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}

@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Certifications', href: '#certifications' },
+  { label: 'GitHub', href: '#github' },
   { label: 'Contact', href: '#contact' },
   { label: 'Blog', href: 'https://medium.com/@f.nahian1997', external: true },
 ];
