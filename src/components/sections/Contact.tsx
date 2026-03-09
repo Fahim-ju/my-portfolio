@@ -5,20 +5,20 @@ import { useSectionInView } from '../../hooks/useSectionInView';
 import { SectionTitle } from '../ui/SectionTitle';
 import { Button } from '../ui/Button';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpqyqrle';
 
 const SOCIALS = [
   {
     Icon: FiGithub,
     label: 'GitHub',
-    href: 'https://github.com/fahim',
-    handle: '@fahim',
+    href: 'https://github.com/Fahim-ju',
+    handle: '@Fahim-ju',
   },
   {
     Icon: FiLinkedin,
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/fahim',
-    handle: 'linkedin.com/in/fahim',
+    href: 'https://www.linkedin.com/in/fahimul1997/',
+    handle: 'linkedin.com/in/fahimul1997',
   },
   {
     Icon: FiMail,
