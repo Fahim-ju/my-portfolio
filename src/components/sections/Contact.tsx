@@ -6,25 +6,28 @@ import { SectionTitle } from '../ui/SectionTitle';
 import { Button } from '../ui/Button';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpqyqrle';
+const GITHUB_URL = import.meta.env.VITE_GITHUB_URL;
+const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL;
+const EMAIL = import.meta.env.VITE_EMAIL;
 
 const SOCIALS = [
   {
     Icon: FiGithub,
     label: 'GitHub',
-    href: 'https://github.com/Fahim-ju',
+    href: GITHUB_URL,
     handle: '@Fahim-ju',
   },
   {
     Icon: FiLinkedin,
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/fahimul1997/',
+    href: LINKEDIN_URL,
     handle: 'linkedin.com/in/fahimul1997',
   },
   {
     Icon: FiMail,
     label: 'Email',
-    href: 'mailto:f.nahian1997@gmail.com',
-    handle: 'f.nahian1997@gmail.com',
+    href: `mailto:${EMAIL}`,
+    handle: EMAIL,
   },
 ];
 

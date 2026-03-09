@@ -2,6 +2,10 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
 import { Button } from '../ui/Button';
 
+const GITHUB_URL = import.meta.env.VITE_GITHUB_URL;
+const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL;
+const EMAIL = import.meta.env.VITE_EMAIL;
+
 export function Hero() {
   return (
     <section
@@ -72,7 +76,7 @@ export function Hero() {
           className="flex items-center justify-center gap-6"
         >
           <a
-            href="https://github.com/fahim"
+            href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
@@ -81,7 +85,7 @@ export function Hero() {
             <FiGithub className="w-6 h-6" />
           </a>
           <a
-            href="https://linkedin.com/in/fahim"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
@@ -90,7 +94,7 @@ export function Hero() {
             <FiLinkedin className="w-6 h-6" />
           </a>
           <a
-            href="mailto:fahim@example.com"
+            href={`mailto:${EMAIL}`}
             aria-label="Email"
             className="text-slate-400 hover:text-sky-400 transition-colors"
           >

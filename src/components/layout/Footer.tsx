@@ -1,5 +1,9 @@
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
+const GITHUB_URL = import.meta.env.VITE_GITHUB_URL;
+const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL;
+const EMAIL = import.meta.env.VITE_EMAIL;
+
 export function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -10,7 +14,7 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/fahim"
+            href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -19,7 +23,7 @@ export function Footer() {
             <FiGithub className="w-5 h-5" />
           </a>
           <a
-            href="https://linkedin.com/in/fahim"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -28,7 +32,7 @@ export function Footer() {
             <FiLinkedin className="w-5 h-5" />
           </a>
           <a
-            href="mailto:fahim@example.com"
+            href={`mailto:${EMAIL}`}
             aria-label="Email"
             className="text-slate-500 hover:text-sky-400 transition-colors"
           >
