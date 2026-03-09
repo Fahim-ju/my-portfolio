@@ -18,13 +18,13 @@ interface ResumeModalProps {
 
 export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const [isLoading, setIsLoading] = useState(true);
-  
+
   const zoomPluginInstance = zoomPlugin();
   const pageNavigationPluginInstance = pageNavigationPlugin();
   const getFilePluginInstance = getFilePlugin();
   const toolbarPluginInstance = toolbarPlugin();
 
-  const { ZoomInButton, ZoomOutButton } = zoomPluginInstance;
+  const { ZoomInButton, ZoomOutButton, CurrentScale } = zoomPluginInstance;
   const { CurrentPageLabel, GoToNextPageButton, GoToPreviousPageButton } = pageNavigationPluginInstance;
   const { DownloadButton } = getFilePluginInstance;
 
@@ -52,17 +52,17 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <CurrentPageLabel />
             <GoToNextPageButton />
           </div>
-          
           <div className="divider"></div>
-          
           <div className="flex items-center gap-2">
             <ZoomOutButton />
-            <span className="zoom-percentage">100%</span>
+            <CurrentScale>
+              {({ scale }) => (
+                <span className="zoom-percentage">{Math.round(scale * 100)}%</span>
+              )}
+            </CurrentScale>
             <ZoomInButton />
           </div>
-          
           <div className="divider ml-auto"></div>
-          
           <div className="flex items-center gap-2">
             <DownloadButton />
           </div>
