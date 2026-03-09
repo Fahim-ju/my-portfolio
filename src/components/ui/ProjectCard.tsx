@@ -11,7 +11,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
       whileHover={{ y: -6 }}
       className="flex flex-col bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg hover:border-sky-500/50 transition-colors duration-300"
