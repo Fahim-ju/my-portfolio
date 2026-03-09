@@ -2,13 +2,21 @@ import type { Project } from '../types';
 
 export const projects: Project[] = [
   {
-    id: 1,
-    title: 'Salary Manager',
+    id: 7,
+    title: 'Decentralized Health Record System',
     description:
-      'A full-stack payroll management system with role-based access control, employee records, automated monthly salary calculation, and downloadable pay-slip generation.',
-    stack: ['React', 'Node.js', 'PostgreSQL', 'Express', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/fahim',
+      'A blockchain-based distributed medical record keeping system built on the Ethereum Platform using Solidity smart contracts, Truffle, ReactJS, and MetaMask for secure patient data management.',
+    stack: ['Solidity', 'Truffle', 'ReactJS', 'MetaMask', 'Ethereum'],
+    githubUrl: 'https://github.com/Fahim-ju/Decentralized-Health-Record-System',
     featured: true,
+  },
+  {
+    id: 8,
+    title: 'Write-In — Blogging Site',
+    description:
+      'A team blogging platform built with HTML, CSS, Bootstrap, JavaScript, and Node.js following the MVC software design pattern, with collaborative git wiki for documentation.',
+    stack: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Node.js', 'MVC'],
+    githubUrl: 'https://github.com/alif-csc/write-in-SWE-project',
   },
   {
     id: 2,
@@ -29,14 +37,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 4,
-    title: 'Expense Manager API',
-    description:
-      'RESTful API built with ASP.NET Core for tracking personal and team expenses with category-based reporting, JWT authentication, and Swagger documentation.',
-    stack: ['C#', 'ASP.NET Core', 'SQL Server', 'JWT', 'Swagger'],
-    githubUrl: 'https://github.com/fahim',
-  },
-  {
     id: 5,
     title: 'GameHub',
     description:
@@ -53,4 +53,5 @@ export const projects: Project[] = [
     stack: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'NativeWind'],
     githubUrl: 'https://github.com/fahim',
   },
+  
 ];
