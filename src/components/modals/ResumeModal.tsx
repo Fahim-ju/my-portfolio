@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import { FiX } from 'react-icons/fi';
 import { Viewer, Worker, SpecialZoomLevel } from '@react-pdf-viewer/core';
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
@@ -19,6 +20,18 @@ interface ResumeModalProps {
 export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const [isLoading, setIsLoading] = useState(true);
 
+  // Prevent background scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const zoomPluginInstance = zoomPlugin();
   const pageNavigationPluginInstance = pageNavigationPlugin();
   const getFilePluginInstance = getFilePlugin();
@@ -31,8 +44,15 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-      <div className="bg-slate-900 rounded-lg w-full h-[90vh] max-w-4xl flex flex-col shadow-2xl">
+    <div
+      className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4"
+      onClick={onClose}
+      role="presentation"
+    >
+      <div
+        className="bg-slate-900 rounded-lg w-full h-[90vh] max-w-4xl flex flex-col shadow-2xl"
+        onClick={e => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="flex items-center justify-between p-2 border-b border-slate-700">
           <h2 className="text-l font-semibold text-slate-100">My Resume</h2>
