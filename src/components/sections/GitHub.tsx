@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { useSectionInView } from '../../hooks/useSectionInView';
 import { SectionTitle } from '../ui/SectionTitle';
 import { GitHubCalendar } from 'react-github-calendar';
@@ -8,8 +9,59 @@ import './GitHub.css';
 
 const GITHUB_USERNAME = import.meta.env.VITE_GITHUB_USERNAME || 'your-github-username';
 
+interface GitHubStats {
+  totalContributions: number;
+  publicRepos: number;
+  followers: number;
+  loading: boolean;
+}
+
 export function GitHub() {
   const { ref, inView } = useSectionInView();
+  const [stats, setStats] = useState<GitHubStats>({
+    totalContributions: 0,
+    publicRepos: 0,
+    followers: 0,
+    loading: true,
+  });
+
+  useEffect(() => {
+    const fetchGitHubStats = async () => {
+      try {
+        // Fetch user data
+        const userResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+        const userData = await userResponse.json();
+
+        // Fetch repositories to count public repos
+        const reposResponse = await fetch(
+          `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&type=public`
+        );
+        const reposData = await reposResponse.json();
+        const publicRepos = userData.public_repos || 0;
+
+        setStats({
+          totalContributions: calculateTotalContributions(userData),
+          publicRepos,
+          followers: userData.followers || 0,
+          loading: false,
+        });
+      } catch (error) {
+        console.error('Error fetching GitHub stats:', error);
+        setStats((prev) => ({ ...prev, loading: false }));
+      }
+    };
+
+    if (GITHUB_USERNAME !== 'your-github-username') {
+      fetchGitHubStats();
+    }
+  }, []);
+
+  const calculateTotalContributions = (userData: any) => {
+    // GitHub API doesn't expose total contributions directly
+    // We estimate based on available data or use a placeholder
+    // For accurate data, you'd need to scrape the profile or use GitHub GraphQL
+    return userData.public_repos * 100 || 0;
+  };
 
   return (
     <section id="github" ref={ref} className="py-24 px-4 max-w-6xl mx-auto">
@@ -44,14 +96,14 @@ export function GitHub() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 w-full">
           {[
             {
-              label: 'Total Contributions',
-              value: '2,500+',
-              icon: '📊',
+              label: 'Total Repositories',
+              value: stats.loading ? '...' : stats.publicRepos,
+              icon: '📦',
             },
             {
-              label: 'Active Repositories',
-              value: '30+',
-              icon: '📦',
+              label: 'Followers',
+              value: stats.loading ? '...' : stats.followers,
+              icon: '👥',
             },
             {
               label: 'GitHub Profile',
