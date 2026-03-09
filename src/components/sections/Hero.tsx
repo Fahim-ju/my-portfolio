@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
 import { Button } from '../ui/Button';
+import { ResumeModal } from '../modals/ResumeModal';
 
 const GITHUB_URL = import.meta.env.VITE_GITHUB_URL;
 const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL;
 const EMAIL = import.meta.env.VITE_EMAIL;
 
 export function Hero() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section
       id="hero"
@@ -67,6 +71,12 @@ export function Hero() {
         >
           <Button href="#projects">View My Work</Button>
           <Button variant="ghost" href="#contact">Get In Touch</Button>
+          <Button 
+            variant="ghost" 
+            onClick={() => setIsResumeOpen(true)}
+          >
+            View Resume
+          </Button>
         </motion.div>
 
         <motion.div
@@ -119,6 +129,8 @@ export function Hero() {
           <FiArrowDown className="w-6 h-6" />
         </motion.div>
       </motion.a>
+
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </section>
   );
 }
