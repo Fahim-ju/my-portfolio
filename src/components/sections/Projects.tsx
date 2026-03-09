@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { useSectionInView } from '../../hooks/useSectionInView';
 import { SectionTitle } from '../ui/SectionTitle';
 import { ProjectCard } from '../ui/ProjectCard';
-import { projects } from '../../data/projects';
+import { usePortfolioData } from '../../hooks/usePortfolioData';
 
 export function Projects() {
   const { ref, inView } = useSectionInView();
+  const { projects } = usePortfolioData();
 
   return (
     <section

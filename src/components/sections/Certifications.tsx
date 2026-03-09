@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { FiExternalLink, FiAward, FiCalendar, FiShield } from 'react-icons/fi';
 import { useSectionInView } from '../../hooks/useSectionInView';
 import { SectionTitle } from '../ui/SectionTitle';
-import { certifications } from '../../data/certifications';
+import { usePortfolioData } from '../../hooks/usePortfolioData';
 
 export function Certifications() {
   const { ref, inView } = useSectionInView();
+  const { certifications } = usePortfolioData();
 
   return (
     <section

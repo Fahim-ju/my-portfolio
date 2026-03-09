@@ -4,9 +4,7 @@ import { FiCode, FiAward, FiZap, FiExternalLink } from 'react-icons/fi';
 import { useSectionInView } from '../../hooks/useSectionInView';
 import { SectionTitle } from '../ui/SectionTitle';
 import { SkillBadge } from '../ui/SkillBadge';
-import { skillCategories } from '../../data/skills';
-import { contests } from '../../data/contests';
-import { notableWork } from '../../data/notableWork';
+import { usePortfolioData } from '../../hooks/usePortfolioData';
 
 const CATEGORY_ICONS: Record<string, string> = {
   Frontend: '🖥️',
@@ -34,6 +32,7 @@ type TabId = (typeof TABS)[number]['id'];
 export function Skills() {
   const { ref, inView } = useSectionInView();
   const [activeTab, setActiveTab] = useState<TabId>('technologies');
+  const { skillCategories, contests, notableWork } = usePortfolioData();
 
   return (
     <section

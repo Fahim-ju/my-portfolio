@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { useSectionInView } from '../../hooks/useSectionInView';
 import { SectionTitle } from '../ui/SectionTitle';
-import { experience } from '../../data/experience';
+import { usePortfolioData } from '../../hooks/usePortfolioData';
 
 export function Experience() {
   const { ref, inView } = useSectionInView();
+  const { experience } = usePortfolioData();
 
   return (
     <section
@@ -55,7 +56,7 @@ export function Experience() {
                     <ul className="space-y-1.5">
                       {item.description.map((point, i) => (
                         <li key={i} className="text-slate-400 text-sm flex gap-2 leading-relaxed">
-                          <span className="text-sky-500 mt-1 flex-shrink-0">▸</span>
+                          <span className="text-sky-500 mt-1 shrink-0">▸</span>
                           {point}
                         </li>
                       ))}
