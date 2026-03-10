@@ -64,7 +64,8 @@ export function GitHub() {
   };
 
   return (
-    <section id="github" ref={ref} className="py-24 px-4 max-w-6xl mx-auto">
+    <section id="github" ref={ref} className="py-24 px-4 bg-slate-800/30">
+      <div className="max-w-6xl mx-auto">
       <SectionTitle 
         title="GitHub Activity" 
         subtitle="My contributions and coding journey" 
@@ -132,6 +133,7 @@ export function GitHub() {
           ))}
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }
