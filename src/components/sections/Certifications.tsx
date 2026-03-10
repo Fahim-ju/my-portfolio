@@ -11,7 +11,7 @@ export function Certifications() {
     <section
       id="certifications"
       ref={ref}
-      className="py-24 px-4 bg-slate-800/30"
+      className="py-24 px-4"
     >
       <div className="max-w-5xl mx-auto">
         <SectionTitle
