@@ -6,6 +6,7 @@ import { GitHubCalendar } from 'react-github-calendar';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import './GitHub.css';
+import type { GitHubUser } from '../../types';
 
 const GITHUB_USERNAME = import.meta.env.VITE_GITHUB_USERNAME || 'your-github-username';
 
@@ -25,18 +26,17 @@ export function GitHub() {
     loading: true,
   });
 
+  const calculateTotalContributions = (userData: GitHubUser) => {
+    // GitHub API doesn't expose total contributions directly
+    // We estimate based on available data or use a placeholder
+    // For accurate data, you'd need to scrape the profile or use GitHub GraphQL
+    return userData.public_repos * 100 || 0;
+  };
   useEffect(() => {
     const fetchGitHubStats = async () => {
       try {
-        // Fetch user data
         const userResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
-        const userData = await userResponse.json();
-
-        // Fetch repositories to count public repos
-        const reposResponse = await fetch(
-          `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&type=public`
-        );
-        const reposData = await reposResponse.json();
+        const userData: GitHubUser = await userResponse.json();
         const publicRepos = userData.public_repos || 0;
 
         setStats({
@@ -56,12 +56,6 @@ export function GitHub() {
     }
   }, []);
 
-  const calculateTotalContributions = (userData: any) => {
-    // GitHub API doesn't expose total contributions directly
-    // We estimate based on available data or use a placeholder
-    // For accurate data, you'd need to scrape the profile or use GitHub GraphQL
-    return userData.public_repos * 100 || 0;
-  };
 
   return (
     <section id="github" ref={ref} className="py-24 px-4 bg-slate-800/30">
